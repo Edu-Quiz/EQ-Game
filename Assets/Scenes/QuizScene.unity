@@ -2693,14 +2693,14 @@ MonoBehaviour:
     - Santiago
     - Mauricio
     correctAnswer: 3
-  - Question: Cuantos  anos tengo?
+  - Question: "Cuantos  a\xF1os tengo?"
     Answers:
     - 12
     - 23
     - 17
     - 22
     correctAnswer: 4
-  - Question: Cuando es mi cumpleanos?
+  - Question: "Cuando es mi cumplea\xF1os?"
     Answers:
     - 17 sep
     - 12 sep

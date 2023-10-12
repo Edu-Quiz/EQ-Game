@@ -7,6 +7,7 @@ public class SceneMan : MonoBehaviour
 {
 
     [SerializeField] private ExitWarningConfirmation myExitWarningConfirmation;
+    
 
     public void mainMenue()
     {
@@ -23,6 +24,11 @@ public class SceneMan : MonoBehaviour
         SceneManager.LoadScene("IntroScene");
     }
 
+    public void salirMenuPrincipal()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void salirJuego()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
@@ -32,6 +38,10 @@ public class SceneMan : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
+
+
+
+
 
     public void confirmationWindow()
     {
