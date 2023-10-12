@@ -3,45 +3,62 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class QuizManager : MonoBehaviour
 {
+    public static QuizManager instance;
+
+
     public List<QuestionsAndAnswers> QnA;
     public GameObject[] options;
     public int currentQuestion;
 
-    public GameObject Quizpanel;
-    public GameObject Gameoverpanel;
-
     public TextMeshProUGUI QuestionTxt;
-    public TextMeshProUGUI ScoreTxt;
 
-    int totalQuestions = 0;
-    public int score;
+    public int totalQuestions = 0;
+
+    ScoreSystem scoreSystem;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            instance.SetManagers();
+        }
+        else
+        {
+            instance = this;
+            SetManagers();
+        }
+
+    }
 
     private void Start()
     {
         totalQuestions = QnA.Count;
-        Gameoverpanel.SetActive(false);
         generateQuestion();
-
     }
 
-    public void retry()
+    public void SetManagers()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (scoreSystem == null)
+        {
+            ScoreSystem scoreSystemInstance = FindObjectOfType<ScoreSystem>();
+            scoreSystem = scoreSystemInstance;
+        }
     }
 
     public void GameOver()
     {
-        Quizpanel.SetActive(false);
-        Gameoverpanel.SetActive(true);
-        ScoreTxt.text = score + "/" + totalQuestions;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Puntuacion.preguntasTot = totalQuestions;
+
     }
 
     public void correct()
     {
-        score += 1;
+        scoreSystem.score += 1;
         QnA.RemoveAt(currentQuestion);
         generateQuestion();
     }
