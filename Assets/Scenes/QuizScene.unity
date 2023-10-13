@@ -703,7 +703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -4.899994}
+  m_AnchoredPosition: {x: 0, y: -4.9000244}
   m_SizeDelta: {x: 210, y: 153.1758}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &169527316
@@ -2686,26 +2686,75 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Question: Como me llamo?
+  - Question: 5 x 7
     Answers:
-    - Julio
-    - Pablo
-    - Santiago
-    - Mauricio
+    - 30
+    - 37
+    - 35
+    - 40
     correctAnswer: 3
-  - Question: "Cuantos  a\xF1os tengo?"
+  - Question: "40 \xF7 5"
     Answers:
-    - 12
-    - 23
-    - 17
-    - 22
+    - 9
+    - 5
+    - 4
+    - 8
     correctAnswer: 4
-  - Question: "Cuando es mi cumplea\xF1os?"
+  - Question: "\xBFD\xF3nde se encuentra la Sagrada Familia?"
     Answers:
-    - 17 sep
-    - 12 sep
-    - 8 sep
-    - 25 sep
+    - Barcelona
+    - Madrid
+    - "M\xE9xico"
+    - Italia
+    correctAnswer: 1
+  - Question: "\xBFCu\xE1l es el nombre cient\xEDfico del ser humano?"
+    Answers:
+    - Homo sapiens
+    - Homo erectus
+    - Homo habilis
+    - "Homog\xE9neo"
+    correctAnswer: 1
+  - Question: "\xBFEn qu\xE9 pa\xEDs se utiliz\xF3 la primera bomba at\xF3mica? "
+    Answers:
+    - Vietnam
+    - Estados Unidos
+    - "Jap\xF3n"
+    - China
+    correctAnswer: 3
+  - Question: "\xBFD\xF3nde naci\xF3 Adolf Hitler?"
+    Answers:
+    - Alemania
+    - Austria
+    - Viena
+    - Francia
+    correctAnswer: 2
+  - Question: "\xBFA qu\xE9 ciudad es conocida como la \"de los rascacielos\"? "
+    Answers:
+    - Seattle
+    - Paris
+    - Nueva Orleans
+    - 'Nueva York '
+    correctAnswer: 4
+  - Question: "\xBFQu\xE9 r\xEDo pasa por roma?  "
+    Answers:
+    - "R\xEDo Nilo "
+    - "R\xEDo de Janeiro"
+    - "R\xEDo Ganges"
+    - "El r\xEDo T\xEDber "
+    correctAnswer: 4
+  - Question: "\xBFD\xF3nde est\xE1 el Taj Mahal? "
+    Answers:
+    - Tailandia
+    - 'India '
+    - Jordania
+    - Jerusalen
+    correctAnswer: 2
+  - Question: "\xBFCu\xE1l es el animal m\xE1s grande de la tierra?  "
+    Answers:
+    - 'La ballena azul '
+    - Elefante
+    - Leon
+    - Jirafa
     correctAnswer: 1
   options:
   - {fileID: 1090328518}
