@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnswersManager : MonoBehaviour
 {
+    
     public bool isCorrect = false;
     public QuizManager quizManager;
 
