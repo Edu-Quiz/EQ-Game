@@ -181,7 +181,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2420855119129946396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,4 +251,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionTime: 3
   delayBeforeTransition: 1
-  transitionAnimator: {fileID: 0}
+  transitionAnimator: {fileID: 2420855119036110049}

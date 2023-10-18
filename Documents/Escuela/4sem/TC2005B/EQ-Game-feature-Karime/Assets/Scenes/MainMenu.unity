@@ -1213,6 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0256247c5814831958a87873ae178c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SceneLoadManager: {fileID: 2095846951}
   myExitWarningConfirmation: {fileID: 0}
 --- !u!1 &1825676817
 GameObject:
@@ -1529,3 +1530,14 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2420855119036110049, guid: dc44530c11dadd44f9f9966c55795ef1, type: 3}
   m_PrefabInstance: {fileID: 2095846945}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2095846951 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2420855119502980778, guid: dc44530c11dadd44f9f9966c55795ef1, type: 3}
+  m_PrefabInstance: {fileID: 2095846945}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3bc903045e6cb04fa931e68efa42dd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

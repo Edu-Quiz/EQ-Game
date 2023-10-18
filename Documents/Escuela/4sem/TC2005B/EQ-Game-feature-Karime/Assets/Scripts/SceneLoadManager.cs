@@ -6,7 +6,7 @@ public class SceneLoadManager : MonoBehaviour
 {
     [SerializeField] private float transitionTime = 3.0f;
     [SerializeField] private float delayBeforeTransition = 1.0f;
-    [SerializeField] private Animator transitionAnimator;
+    [SerializeField] public Animator transitionAnimator;
 
     private void Start()
     {
@@ -45,8 +45,9 @@ public class SceneLoadManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delayBeforeTransition);
 
-        transitionAnimator.SetTrigger("StartTransition"); 
+        //transitionAnimator.SetTrigger("StartTransition"); 
+        transitionAnimator.Play("CircleExpand",0,0f);
         yield return new WaitForSeconds(transitionTime);   
-        SceneManager.LoadScene(sceneIndex);
+        //SceneManager.LoadScene(sceneIndex);
     }
 }

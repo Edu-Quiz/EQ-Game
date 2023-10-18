@@ -1,11 +1,12 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class AutoSceneSwitcher : MonoBehaviour
 {
-    public string sceneToLoad; 
-    public float delay = 4.0f; // Tiempo de espera en segundos antes de cambiar de escena.
+    public SceneLoadManager _SceneLoadManager;
+
+    public string sceneToLoad;
+    public float delay = 4.0f;
 
     private void Start()
     {
@@ -15,6 +16,19 @@ public class AutoSceneSwitcher : MonoBehaviour
     private IEnumerator SwitchSceneAfterDelay()
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene(sceneToLoad);
+        StartCoroutine(SceneLoad());
+    }
+
+    public IEnumerator SceneLoad()
+    {
+        yield return new WaitForSeconds(1f);
+
+        if (_SceneLoadManager && _SceneLoadManager.transitionAnimator)
+        {
+            _SceneLoadManager.transitionAnimator.Play("CircleExpand", 0, 0f);
+            yield return new WaitForSeconds(1f); 
+        }
+
+        Loader.LoadScene(sceneToLoad);
     }
 }

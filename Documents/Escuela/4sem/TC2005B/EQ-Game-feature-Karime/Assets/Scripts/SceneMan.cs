@@ -5,26 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class SceneMan : MonoBehaviour
 {
+    public SceneLoadManager _SceneLoadManager;
     [SerializeField] private ExitWarningConfirmation myExitWarningConfirmation;
-
-    public void salirMenuPrincipal()
-    {
-        Loader.LoadScene("MainMenu");
-    }
 
     public void mainMenue()
     {
-        Loader.LoadScene("MainMenu"); 
+        StartCoroutine(SceneLoad("MainMenu"));
     }
 
     public void quizScene()
     {
-        Loader.LoadScene("QuizScene"); 
+        StartCoroutine(SceneLoad("QuizScene"));
     }
 
     public void salirIntroScene()
     {
-        Loader.LoadScene("IntroScene");
+        StartCoroutine(SceneLoad("IntroScene"));
+    }
+
+    public void salirMenuPrincipal()
+    {
+        StartCoroutine(SceneLoad("MainMenu"));
     }
 
     public void salirJuego()
@@ -34,7 +35,20 @@ public class SceneMan : MonoBehaviour
 
     public void retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public IEnumerator SceneLoad(string sceneName)
+    {
+        yield return new WaitForSeconds(1f);
+
+        if (_SceneLoadManager.transitionAnimator != null)
+        {
+            _SceneLoadManager.transitionAnimator.Play("CircleExpand", 0, 0f);
+            yield return new WaitForSeconds(1f); 
+        }
+
+        Loader.LoadScene(sceneName);
     }
 
     public void confirmationWindow()
@@ -51,8 +65,7 @@ public class SceneMan : MonoBehaviour
 
     private void YesClicked()
     {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); 
-        Loader.LoadScene("MainMenu");
+        StartCoroutine(SceneLoad("MainMenu"));
     }
 
     private void NoClicked()

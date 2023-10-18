@@ -6,18 +6,26 @@ using UnityEngine.SceneManagement;
 public class Loader : MonoBehaviour
 {
     public Slider loadingBar;
-    public float simulatedLoadTime = 3.0f; // Tiempo de carga simulado
+    public float simulatedLoadTime = 3.0f;
+    public Animator transitionAnimator;
 
     public static string nextSceneToLoad;
 
     private void Start()
     {
-        StartCoroutine(DelayBeforeLoad());
+        StartCoroutine(SceneLoad());
     }
 
-    private IEnumerator DelayBeforeLoad()
+    private IEnumerator SceneLoad()
     {
-        yield return new WaitForSeconds(1f);  // Espera 1 segundos antes de comenzar
+        yield return new WaitForSeconds(Mathf.Max(simulatedLoadTime, 4f));
+
+        if (transitionAnimator != null)
+        {
+            transitionAnimator.Play("CircleExpand", 0, 0f);
+            yield return new WaitForSeconds(1f); 
+        }
+
         StartCoroutine(SimulatedLoadSceneAsync(nextSceneToLoad));
     }
 
